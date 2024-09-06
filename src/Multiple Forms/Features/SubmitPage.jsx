@@ -1,9 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SubmitPage = () => {
   const { firstName, lastName, phoneNumber, email, address, password } =
     useSelector((state) => state.form);
+
+    const navigate = useNavigate();
+    const Back = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   return (
     <div>
@@ -33,6 +40,7 @@ const SubmitPage = () => {
           <b>Password:</b> {password}
         </p>
       </div>
+      <button onClick={Back} className="p-10 text-red-600 text-[10px]">Go Back</button>
     </div>
   );
 };
