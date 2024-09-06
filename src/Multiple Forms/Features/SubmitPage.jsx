@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const SummaryPage = () => {
+const SubmitPage = () => {
   const { firstName, lastName, phoneNumber, email, address, password } = useSelector(
     (state) => state.form
   );
@@ -19,4 +19,4 @@ const SummaryPage = () => {
   );
 };
 
-export default SummaryPage;
+export default SubmitPage;
