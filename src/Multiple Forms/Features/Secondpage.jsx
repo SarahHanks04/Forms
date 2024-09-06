@@ -23,7 +23,7 @@ const SecondPage = () => {
       <label htmlFor="phone">Phone Number</label>
       <input
         type="text"
-        name="phone"
+        name="phoneNumber"
         onInput={handleInput}
         required
         className="border rounded px-2 py-1 w-full"
