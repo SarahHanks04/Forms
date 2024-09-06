@@ -40,7 +40,7 @@ const SecondPage = () => {
       <br />
       <button
         onClick={Next}
-        className="mt-4 bg-blue-500 text-white p-2 w-full rounded hover:bg-blue-700"
+        className="mt-4 bg-[#ff000064] text-white text-xl p-2 w-full rounded hover:bg-[#0000ff45]"
       >
         Next
       </button>

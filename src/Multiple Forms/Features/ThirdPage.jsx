@@ -15,8 +15,7 @@ const ThirdPage = () => {
 
   const Submit = (e) => {
     e.preventDefault();
-    navigate("/summary");
-    alert("Form Submitted");
+    navigate("/submit");
   };
 
   return (
@@ -41,7 +40,7 @@ const ThirdPage = () => {
       <br />
       <button
         onClick={Submit}
-        className="mt-4 bg-green-500 text-white p-2 w-full rounded hover:bg-green-700"
+        className="mt-4 bg-[#ff000064] text-white text-xl p-2 w-full rounded hover:bg-[#0000ff45]"
       >
         Submit
       </button>
