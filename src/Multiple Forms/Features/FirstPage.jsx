@@ -19,9 +19,6 @@ const FirstPage = () => {
 
   return (
     <div className=" p-10">
-      <h1 className="text-2xl font-bold mb-6 text-center">
-        Personal Information
-      </h1>
       <div className="p-4 border rounded-md">
         <label htmlFor="firstName">First Name</label>
         <input
