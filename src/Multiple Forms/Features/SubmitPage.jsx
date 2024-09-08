@@ -13,7 +13,7 @@ const SubmitPage = () => {
   };
 
   return (
-    <div>
+    <form>
       <h1 className="text-3xl font-bold mb-8">Details Submitted</h1>
       <div className="text-start p-4 border-2 rounded-md">
         <p className="mb-2">
@@ -41,7 +41,7 @@ const SubmitPage = () => {
         </p>
       </div>
       <button onClick={Back} className="p-10 text-red-600 text-[10px]">Go Back</button>
-    </div>
+    </form>
   );
 };
 

@@ -24,7 +24,7 @@ const ThirdPage = () => {
 
   return (
     <div>
-      <div className="p-4 border rounded-md">
+      <form className="p-4 border rounded-md">
         <label htmlFor="address">Address</label>
         <input
           type="text"
@@ -49,7 +49,7 @@ const ThirdPage = () => {
         >
           Submit
         </button>
-      </div>
+      </form>
       <button onClick={Previous} className="p-10 text-red-600 text-[10px]">
         Go Back To Second Page
       </button>

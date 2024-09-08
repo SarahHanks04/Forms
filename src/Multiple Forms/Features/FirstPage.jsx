@@ -19,7 +19,7 @@ const FirstPage = () => {
 
   return (
     <div className=" p-10">
-      <div className="p-4 border rounded-md">
+      <form className="p-4 border rounded-md">
         <label htmlFor="firstName">First Name</label>
         <input
           type="text"
@@ -44,7 +44,7 @@ const FirstPage = () => {
         >
           Next
         </button>
-      </div>
+      </form>
     </div>
   );
 };

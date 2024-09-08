@@ -24,7 +24,7 @@ const SecondPage = () => {
 
   return (
     <div>
-      <div className="p-4 border rounded-md">
+      <form className="p-4 border rounded-md">
         <label htmlFor="phone">Phone Number</label>
         <input
           type="text"
@@ -49,7 +49,7 @@ const SecondPage = () => {
         >
           Next
         </button>
-      </div>
+      </form>
       <button onClick={Previous} className="p-10 text-red-600 text-[10px]">
         Go Back To First Page
       </button>
