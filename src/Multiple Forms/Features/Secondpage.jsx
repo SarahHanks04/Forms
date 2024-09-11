@@ -27,7 +27,7 @@ const SecondPage = () => {
       <form className="p-4 border rounded-md">
         <label htmlFor="phone">Phone Number</label>
         <input
-          type="text"
+          type="tel"
           name="phoneNumber"
           onInput={handleInput}
           required
