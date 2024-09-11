@@ -36,7 +36,7 @@ const SecondPage = () => {
         <br />
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           name="email"
           onInput={handleInput}
           required
