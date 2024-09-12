@@ -1,14 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { resetForm } from "./Slice/FormSlice";
 
 const SubmitPage = () => {
   const { firstName, lastName, phoneNumber, email, address, password } =
     useSelector((state) => state.form);
 
-    const navigate = useNavigate();
-    const Back = (e) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const Back = (e) => {
     e.preventDefault();
+    navigate("/");
+  };
+
+  const Reset = (e) => {
+    e.preventDefault();
+    dispatch(resetForm());
     navigate("/");
   };
 
@@ -40,7 +49,16 @@ const SubmitPage = () => {
           <b>Password:</b> {password}
         </p>
       </div>
-      <button onClick={Back} className="p-10 text-red-600 text-[10px]">Go Back</button>
+      <button onClick={Back} className="p-10 text-red-600 text-[10px]">
+        Go Back
+      </button>
+      <button
+        type="submit"
+        onClick={Reset}
+        className="p-10 text-red-600 text-[10px]"
+      >
+        Reset
+      </button>
     </form>
   );
 };

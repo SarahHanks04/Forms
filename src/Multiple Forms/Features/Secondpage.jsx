@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "./Slice/FormSlice";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const SecondPage = () => {
   const dispatch = useDispatch();
@@ -10,11 +10,6 @@ const SecondPage = () => {
   const handleInput = (e) => {
     const { name, value } = e.target;
     dispatch(updateFormData({ name, value }));
-  };
-
-  const Next = (e) => {
-    e.preventDefault();
-    navigate("/third");
   };
 
   const Previous = (e) => {
@@ -31,7 +26,7 @@ const SecondPage = () => {
           name="phoneNumber"
           onInput={handleInput}
           required
-          className="border rounded px-2 py-1 w-full"
+          className="border rounded px-2 py-1 mb-4 w-full"
         />
         <br />
         <label htmlFor="email">Email</label>
@@ -40,15 +35,15 @@ const SecondPage = () => {
           name="email"
           onInput={handleInput}
           required
-          className="border rounded px-2 py-1 w-full"
+          className="border rounded px-2 py-1 w-full mb-8"
         />
         <br />
-        <button
-          onClick={Next}
+        <NavLink
+          to="/third"
           className="mt-4 bg-[#ff000064] text-white text-xl p-2 w-full rounded hover:bg-[#0000ff45]"
         >
           Next
-        </button>
+        </NavLink>
       </form>
       <button onClick={Previous} className="p-10 text-red-600 text-[10px]">
         Go Back To First Page
