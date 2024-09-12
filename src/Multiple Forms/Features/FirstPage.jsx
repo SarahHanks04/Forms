@@ -1,9 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "./Slice/FormSlice";
 import { NavLink } from "react-router-dom";
 
 const FirstPage = () => {
+  const { firstName, lastName } = useSelector((state) => state.form);
+
   const dispatch = useDispatch();
 
   const handleInput = (e) => {
@@ -18,6 +20,7 @@ const FirstPage = () => {
         <input
           type="text"
           name="firstName"
+          value={firstName}
           onInput={handleInput}
           required
           className="border rounded px-2 py-1 mb-4 w-full"
@@ -27,6 +30,7 @@ const FirstPage = () => {
         <input
           type="text"
           name="lastName"
+          value={lastName}
           onInput={handleInput}
           required
           className="border rounded px-2 py-1 w-full mb-6"

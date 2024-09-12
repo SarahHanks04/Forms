@@ -10,56 +10,85 @@ const SubmitPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const Back = (e) => {
-    e.preventDefault();
-    navigate("/");
-  };
-
-  const Reset = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(resetForm());
     navigate("/");
+    alert("Thank You For Confirming Your Submission!");
   };
 
   return (
-    <form>
+    <div>
       <h1 className="text-3xl font-bold mb-8">Details Submitted</h1>
-      <div className="text-start p-4 border-2 rounded-md">
-        <p className="mb-2">
-          <b>First Name:</b> {firstName}
-        </p>
+      <form className="text-start p-4 border-2 rounded-md">
+        <div className="flex items-center mb-4">
+          <label className="w-1/3 font-bold">First Name</label>
+          <input
+            type="text"
+            value={firstName}
+            className="border px-2 py-1 w-2/3"
+            readOnly
+          />
+        </div>
 
-        <p className="mb-2">
-          <b>Last Name:</b> {lastName}
-        </p>
+        <div className="flex items-center mb-4">
+          <label className="w-1/3 font-bold">Last Name</label>
+          <input
+            type="text"
+            value={lastName}
+            className="border px-2 py-1 w-2/3"
+            readOnly
+          />
+        </div>
 
-        <p className="mb-2">
-          <b>Phone Number:</b> {phoneNumber}
-        </p>
+        <div className="flex items-center mb-4">
+          <label className="w-1/3 mr-2 font-bold">Phone Number</label>
+          <input
+            type="text"
+            value={phoneNumber}
+            className="border px-2 py-1 w-2/3"
+            readOnly
+          />
+        </div>
 
-        <p className="mb-2">
-          <b>Email:</b> {email}
-        </p>
+        <div className="flex items-center mb-4">
+          <label className="w-1/3 font-bold">Email</label>
+          <input
+            type="text"
+            value={email}
+            className="border px-2 py-1 w-2/3"
+            readOnly
+          />
+        </div>
 
-        <p className="mb-2">
-          <b>Address:</b> {address}
-        </p>
+        <div className="flex items-center mb-4">
+          <label className="w-1/3 font-bold">Address</label>
+          <input
+            type="text"
+            value={address}
+            className="border px-2 py-1 w-2/3"
+            readOnly
+          />
+        </div>
 
-        <p className="mb-2">
-          <b>Password:</b> {password}
-        </p>
-      </div>
-      <button onClick={Back} className="p-10 text-red-600 text-[10px]">
-        Go Back
-      </button>
+        <div className="flex items-center mb-4">
+          <label className="w-1/3 font-bold">Password</label>
+          <input
+            type="password"
+            value={password}
+            className="border px-2 py-1 w-2/3"
+            readOnly
+          />
+        </div>
+      </form>
+
       <button
-        type="submit"
-        onClick={Reset}
-        className="p-10 text-red-600 text-[10px]"
+        onClick={handleSubmit}
+        className="mt-4 bg-green-500 text-white px-8 py-1 rounded hover:bg-green-700"
       >
-        Reset
+        Submit
       </button>
-    </form>
+    </div>
   );
 };
 

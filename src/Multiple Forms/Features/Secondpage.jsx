@@ -1,9 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "./Slice/FormSlice";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const SecondPage = () => {
+  const { phoneNumber, email } = useSelector((state) => state.form);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,6 +26,7 @@ const SecondPage = () => {
         <input
           type="tel"
           name="phoneNumber"
+          value={phoneNumber}
           onInput={handleInput}
           required
           className="border rounded px-2 py-1 mb-4 w-full"
@@ -33,6 +36,7 @@ const SecondPage = () => {
         <input
           type="email"
           name="email"
+          value={email}
           onInput={handleInput}
           required
           className="border rounded px-2 py-1 w-full mb-8"
